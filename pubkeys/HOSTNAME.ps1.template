@@ -1,0 +1,8 @@
+# THE FULL NAME: XXXXXXX-XXXXXXX
+# THE MACHINE ID: xxx-xxx-xxx
+
+$hostName = [System.Net.Dns]::GetHostName()
+
+Write-Output "Updating public key for ssh on $hostName"
+
+$Env:SSHD_PUB_KEY = "ssh-ed25519 PUT YOUR PUBLIC KEY STRING HERE"
