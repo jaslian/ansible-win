@@ -8,7 +8,4 @@ $ips = @($Env:ALLOWED_IPV4_ADDRESS, $Env:ALLOWED_IPV4_ADDRESS_RANGE)
 
 foreach ($r in $fwRule) { Set-NetFirewallRule -Name $r.Name -RemoteAddress $ips }
 
-## Restart sshd to implement the changes made
-Write-Host "Restarting sshd service"
-Restart-Service sshd
 Pause

@@ -29,8 +29,4 @@ $sshdConfigPath = 'C:\ProgramData\ssh\sshd_config'
 
 (Get-Content $sshdConfigPath) -replace "#PubkeyAuthentication yes", "PubkeyAuthentication yes" | Set-Content $sshdConfigPath
 
-## Restart sshd to implement the changes made
-Write-Host "Restarting sshd service"
-Restart-Service sshd
-
 Pause

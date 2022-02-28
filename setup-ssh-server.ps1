@@ -44,8 +44,4 @@ $sshdConfigPath = 'C:\ProgramData\ssh\sshd_config'
 
 Write-Host "Installation completed successfully"
 
-## Restart sshd to implement the changes made
-Write-Host "Restarting sshd service"
-Restart-Service sshd
-
 Pause

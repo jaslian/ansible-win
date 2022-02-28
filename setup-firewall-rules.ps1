@@ -13,7 +13,4 @@ else {
     Set-NetFirewallRule -Name $firewallRuleName -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort $portNumber
 }
 
-## Restart sshd to implement the changes made
-Write-Host "Restarting sshd service"
-Restart-Service sshd
 Pause

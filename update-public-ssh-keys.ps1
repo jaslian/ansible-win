@@ -28,7 +28,6 @@ Write-Host "Updating file to add the pub key"
 
 ## Restart sshd to implement the changes made
 Write-Host "Restarting sshd service"
-
 Restart-Service sshd
 
 Pause
