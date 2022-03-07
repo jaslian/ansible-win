@@ -24,10 +24,17 @@ if (!(Test-Path $sshHomeAuthKeys)) {
 }
 
 Write-Host "Updating file to add the pub key"
-(Get-Content $sshHomeAuthKeys) -replace $sshPubKey, $sshPubKey | Set-Content $sshHomeAuthKeys
+Add-Content -Path $sshHomeAuthKeys -Value $sshPubKey
+
+$portNumber = $Env:SSHD_LISTEN_PORT_NUMBER
+# Update port number
+Write-Output "Port number: $portNumber"
+$sshdConfigPath = 'C:\ProgramData\ssh\sshd_config'
+(Get-Content $sshdConfigPath) -replace "#Port 22", "Port 22" | Set-Content $sshdConfigPath
+(Get-Content $sshdConfigPath) -replace "Port 22", "Port $portNumber" | Set-Content $sshdConfigPath
+
+(Get-Content $sshdConfigPath) -replace "#MaxAuthTries 6", "MaxAuthTries 10" | Set-Content $sshdConfigPath
 
 ## Restart sshd to implement the changes made
 Write-Host "Restarting sshd service"
 Restart-Service sshd
-
-Pause

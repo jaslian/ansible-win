@@ -35,8 +35,6 @@ else {
     throw "Script is not running elevated, which is required. Restart the script from an elevated prompt."
 }
 
-Pause
-
 $hostName = [System.Net.Dns]::GetHostName()
 $Env:WIN_NODE_HOST_NAME = $hostName
 

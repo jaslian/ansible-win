@@ -7,5 +7,3 @@ $fwRule = Get-NetFirewallrule -Name "OpenSSH-Server-In-TCP"
 $ips = @($Env:ALLOWED_IPV4_ADDRESS, $Env:ALLOWED_IPV4_ADDRESS_RANGE)
 
 foreach ($r in $fwRule) { Set-NetFirewallRule -Name $r.Name -RemoteAddress $ips }
-
-Pause

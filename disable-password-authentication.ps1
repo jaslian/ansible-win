@@ -11,7 +11,6 @@
 #
 # SO, accomplishing this VIA powershell:
 
-Pause
 Write-Host "Disabling password authentication"
 $sshdConfigPath = 'C:\ProgramData\ssh\sshd_config'
 
@@ -28,5 +27,3 @@ $sshdConfigPath = 'C:\ProgramData\ssh\sshd_config'
 (Get-Content $sshdConfigPath) -replace "#PubkeyAuthentication no", "PubkeyAuthentication yes" | Set-Content $sshdConfigPath
 
 (Get-Content $sshdConfigPath) -replace "#PubkeyAuthentication yes", "PubkeyAuthentication yes" | Set-Content $sshdConfigPath
-
-Pause

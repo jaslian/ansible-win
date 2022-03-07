@@ -20,8 +20,11 @@ try {
     # OPTIONAL but recommended:
     Set-Service -Name sshd -StartupType 'Automatic'
 
+    # Authenticate to the proxy using the following command
+    [System.Net.WebRequest]::DefaultWebProxy.Credentials = [System.Net.CredentialCache]::DefaultCredentials
+
     # To be able to use SSH keys to authenticate, install the following module:
-    Install-Module -Force OpenSSHUtils -Scope AllUsers
+    # Install-Module -Force OpenSSHUtils -Scope AllUsers -Confirm:$false
 
     # Start the sshd service and agent
     Set-Service -Name ssh-agent -StartupType Automatic
@@ -36,12 +39,4 @@ try {
 Write-Host "Setting default shell to powershell"
 New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -PropertyType String -Force -ErrorAction Stop | Out-Null
 
-# Update port number
-Write-Output "Port number: $port"
-$sshdConfigPath = 'C:\ProgramData\ssh\sshd_config'
-(Get-Content $sshdConfigPath) -replace "#Port 22", "Port 22" | Set-Content $sshdConfigPath
-(Get-Content $sshdConfigPath) -replace "Port 22", "Port $port" | Set-Content $sshdConfigPath
-
 Write-Host "Installation completed successfully"
-
-Pause

@@ -12,5 +12,3 @@ else {
     Write-Output "Firewall rule $firewallRuleName has been created and exists."
     Set-NetFirewallRule -Name $firewallRuleName -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort $portNumber
 }
-
-Pause

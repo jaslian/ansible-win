@@ -39,9 +39,9 @@ choco install 7zip.install -y
 choco install 7zip.commandline -y
 choco install git.install -y
 choco install dotnet4.0 -y
-choco install vscode -y
-choco install msiafterburner -y
-choco install open-shell --pre -y
+# choco install vscode -y
+# choco install msiafterburner -y
+# choco install open-shell --pre -y
 
 # Browsers
 # choco install googlechrome -y
@@ -103,6 +103,4 @@ choco install open-shell --pre -y
 # choco install expressvpn -y
 # choco install virtualbox -y
 
-
-Pause
 Write-Output "Completing setup......"
