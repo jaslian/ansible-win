@@ -34,73 +34,95 @@ Write-Output "Installing Chocolatey packages"
 # The following enables allowGlobalConfirmation - install without confirmation prompts.
 choco feature enable -n=allowGlobalConfirmation
 
+# Upgrade
+choco upgrade chocolatey
+
 # Basic
 choco install 7zip.install -y
 choco install 7zip.commandline -y
-choco install git.install -y
+choco install git -y
+choco install github -y
 choco install dotnet4.0 -y
-# choco install vscode -y
-# choco install msiafterburner -y
-# choco install open-shell --pre -y
+choco install vscode -y
+choco install msiafterburner -y
+choco install open-shell -y
+choco install conemu -y
+choco install mingw -y
+choco install cygwin -y
 
 # Browsers
-# choco install googlechrome -y
-# choco install firefox -y
+choco install chrome -y
+choco install firefox -y
 
 # Runtime and SDK
-# choco install dotnet4.5 -y
-# choco install dotnet4.7 -y
-# choco install dotnetfx -y
-# choco install VCredist-All -y
-# choco install JavaRuntime -y
-# choco install cygwin -y
-# choco install oraclejdk -y
-# choco install python3 --pre -y
-# choco install pip -y
-# choco install anaconda3 -y
-# choco install nodejs -y
-# choco install golang -y
-# choco install postman -y
+choco install dotnet3.5 -y
+choco install dotnet4.5 -y
+choco install dotnet4.7.2 -y
+choco install dotnetfx -y
+choco install dotnet5-desktop-runtime -y
+choco install dotnet-5.0-runtime -y
+choco install dotnet-6.0-runtime -y
+choco install dotnet-7.0-runtime -y
+choco install dotnetfx -y
+choco install dotnet-sdk -y
+choco install dotnetcore-sdk -y
+choco install VCredist-All -y
+choco install JavaRuntime -y
+choco install cygwin -y
+choco install oraclejdk -y
+choco install python3 -y
+choco install miniconda3 -y
+choco install pip -y
+choco install anaconda3 -y
+choco install nodejs -y
+choco install golang -y
+choco install postman -y
 
 # IDEs
-# choco install jetbrainstoolbox -y
-# choco install goland -y
-# choco install intellijidea-ultimate -y
-# choco install androidstudio -y
-# choco install android-sdk -y
-# choco install dart-sdk
-# choco install flutter -y
+choco install jetbrainstoolbox -y
+choco install goland -y
+choco install intellijidea-ultimate -y
+choco install androidstudio -y
+choco install android-sdk -y
+choco install dart-sdk
+choco install flutter -y
+choco install r.studio -y
 
 # IM and meeting
-# choco install telegram.install -y
-# choco install skype -y
-# choco install discord -y
-# choco install steam -y
-# choco install zoom -y
-# choco install microsoft-teams -y
-# choco install slack -y
+choco install telegram.install -y
+choco install skype -y
+choco install discord -y
+choco install steam -y
+choco install zoom -y
+choco install microsoft-teams -y
+choco install slack -y
 
 # Audio and Video
-# choco install vlc -y
+choco install vlc -y
 # choco install spotify -y
-# choco install obs-studio -y
-# choco install audacity -y
+choco install obs-studio -y
+choco install audacity -y
 
 # DevOps tools
-# choco install docker-desktop -y
-# choco install terraform -y
-# choco install kubernetes-cli -y
-# choco install kubernetes-helm -y
-# choco install minikube -y
+choco install docker-desktop -y
+choco install terraform -y
+choco install kubernetes-cli -y
+choco install kubernetes-helm -y
+choco install minikube -y
 
 # Other tools
-# choco install Rufus -y
-# choco install Putty -y
-# choco install winscp -y
-# choco install NotepadPlusPlus.install -y
-# choco install adobereader -y
-# choco install xnviewmp -y
-# choco install expressvpn -y
-# choco install virtualbox -y
+choco install Rufus -y
+choco install Putty -y
+choco install winscp -y
+choco install NotepadPlusPlus.install -y
+choco install adobereader -y
+choco install xnviewmp -y
+choco install expressvpn -y
+choco install virtualbox -y
+choco install xyplorer -y
+choco install internet-download-manager -y
+
+# Office Tools
+choco install office365homepremium -y
 
 Write-Output "Completing setup......"
