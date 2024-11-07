@@ -1,6 +1,44 @@
-.ssh/
-.history
-.env
+# IDE and Editor Files
 .idea/
-pubkeys/*.ps1
+.history/
+*.swp
+*.swo
+
+# Build and Binary Directories
+build/
+install/
+bin/
+obj/
+
+# Logs and Debug Files
+logs/
+*.log
 log.txt
+npm-debug.log*
+debug.log
+*.txt
+
+# Security and Credentials
+.ssh/
+.env
+pubkeys/*.ps1
+*.pem
+*.key
+*.crt
+
+# Backup and Temporary Files
+backup/
+temp/
+tmp/
+*.bak
+*.tmp
+*~
+
+# OS-specific Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Package Dependencies
+node_modules/
+vendor/
